@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-weight: 400, 700, 800;
+  // width: 1440px;
+  margin: 5rem 10rem;
+}
+@import url('https://fonts.google.com/specimen/Inter');
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  height: 100vh;
+  width: 13rem;
+  background: hsl(36, 100%, 99%);
+  right: 2rem;
+  .photo {
+    text-align: right;
+  }
+
+  ul {
+    list-style: none;
+    margin-top: 5rem;
+    margin-left: 1rem;
+    li a {
+      text-decoration: none;
+      color: black;
+      line-height: 3;
+    }
+  }
+}
+.wrapper {
+  .heading {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    .film {
+      display: none;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      list-style: none;
+      li a {
+        text-decoration: none;
+        color: hsl(36, 2%, 49%);
+        &:hover {
+          color: hsl(5, 85%, 63%);
+        }
+      }
+    }
+  }
+  .second {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: repeat();
+    justify-content: center;
+    gap: 2rem;
+    // height: 30rem;
+    .desktop {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 60% 40%;
+      height: 40rem;
+      .bright {
+        // grid-column-start: ;
+        font-size: 2rem;
+        width: 20rem;
+        margin-left: 2rem;
+      }
+      .img-container {
+        grid-column: span 2;
+        overflow: hidden;
+        margin: 1.3rem;
+        img {
+          width: 100%;
+        }
+      }
+      .dive {
+        font-size: 1.5rem;
+        color: hsl(45, 2%, 56%);
+        .read {
+          margin-top: 5rem;
+          height: 2.5rem;
+          width: 9rem;
+          background: hsl(5, 85%, 63%);
+          font-size: 1rem;
+          padding: 1rem;
+          text-align: center;
+        }
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+    .written {
+      background: hsl(240, 100%, 5%);
+      height: 90%;
+      width: 85%;
+      padding: 3rem;
+      margin-top: 1rem;
+      color: white;
+      line-height: 1.5rem;
+      .trick {
+        padding: 2rem;
+        h3 {
+          padding-bottom: 1rem;
+        }
+        h1 {
+          color: gold;
+        }
+        p {
+          color: hsl(34, 5%, 72%);
+        }
+      }
+      .line {
+        width: 19rem;
+        height: 0.1rem;
+        background: white;
+      }
+    }
+  }
+  .final {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1rem;
+    .topic {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1.5rem;
+      img {
+        height: 8rem;
+      }
+      h1 {
+        color: hsl(34, 5%, 72%);
+        &:hover {
+          color: hsl(5, 85%, 63%);
+        }
+      }
+      p {
+        color: hsl(34, 5%, 72%);
+        &:hover {
+          color: hsl(5, 85%, 63%);
+        }
+      }
+      .write {
+        // grid-column: span 2;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        line-height: 1.5rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .wrapper .second .written {
+    padding: 1rem;
+    width: 95%;
+    .line {
+      width: 18rem;
+    }
+  }
+}
+
+.wrapper .second .desktop .img-container {
+  img {
+    height: 100%;
+  }
+}
+.wrapper .second .desktop .dive {
+  width: 20rem;
+}
+.wrapper .second .desktop .dive .read {
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .wrapper {
+    .heading {
+      grid-template-columns: none;
+    }
+    .second {
+      .desktop {
+        display: block;
+        grid-column: span 1;
+      }
+    }
+    .final .topic {
+      grid-template-columns: none;
+    }
+  }
+}
+.show {
+  display: block;
+}
+@media only screen and (max-width: 375px) {
+  body {
+    margin: 1rem 2rem;
+  }
+  .wrapper {
+    .second {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      .written {
+        height: 93%;
+        .trick {
+          padding: 1rem;
+        }
+      }
+      .desktop {
+        height: 35rem;
+        .bright {
+          font-size: 1.2rem;
+          margin-left: 0;
+          width: 15rem;
+        }
+      }
+    }
+    .heading {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      .film {
+        display: inline-block;
+        justify-self: end;
+      }
+      ul {
+        grid-template-columns: none;
+        display: none;
+      }
+    }
+    .final {
+      gap: 1rem;
+      .topic {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+        align-items: center;
+      }
+    }
+  }
+}

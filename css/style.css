@@ -1,0 +1,238 @@
+@import url("https://fonts.google.com/specimen/Inter");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-weight: 400, 700, 800;
+  margin: 5rem 10rem;
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  height: 100vh;
+  width: 13rem;
+  background: hsl(36deg, 100%, 99%);
+  right: 2rem;
+}
+.mobile-nav .photo {
+  text-align: right;
+}
+.mobile-nav ul {
+  list-style: none;
+  margin-top: 5rem;
+  margin-left: 1rem;
+}
+.mobile-nav ul li a {
+  text-decoration: none;
+  color: black;
+  line-height: 3;
+}
+
+.wrapper .heading {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+.wrapper .heading .film {
+  display: none;
+}
+.wrapper .heading h1 {
+  font-size: 3rem;
+}
+.wrapper .heading ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+}
+.wrapper .heading ul li a {
+  text-decoration: none;
+  color: hsl(36deg, 2%, 49%);
+}
+.wrapper .heading ul li a:hover {
+  color: hsl(5deg, 85%, 63%);
+}
+.wrapper .second {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  gap: 2rem;
+}
+.wrapper .second .desktop {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 60% 40%;
+  height: 40rem;
+}
+.wrapper .second .desktop .bright {
+  font-size: 2rem;
+  width: 20rem;
+  margin-left: 2rem;
+}
+.wrapper .second .desktop .img-container {
+  grid-column: span 2;
+  overflow: hidden;
+  margin: 1.3rem;
+}
+.wrapper .second .desktop .img-container img {
+  width: 100%;
+}
+.wrapper .second .desktop .dive {
+  font-size: 1.5rem;
+  color: hsl(45deg, 2%, 56%);
+}
+.wrapper .second .desktop .dive .read {
+  margin-top: 5rem;
+  height: 2.5rem;
+  width: 9rem;
+  background: hsl(5deg, 85%, 63%);
+  font-size: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+.wrapper .second .desktop .dive a {
+  text-decoration: none;
+  color: white;
+}
+.wrapper .second .written {
+  background: hsl(240deg, 100%, 5%);
+  height: 90%;
+  width: 85%;
+  padding: 3rem;
+  margin-top: 1rem;
+  color: white;
+  line-height: 1.5rem;
+}
+.wrapper .second .written .trick {
+  padding: 2rem;
+}
+.wrapper .second .written .trick h3 {
+  padding-bottom: 1rem;
+}
+.wrapper .second .written .trick h1 {
+  color: gold;
+}
+.wrapper .second .written .trick p {
+  color: hsl(34deg, 5%, 72%);
+}
+.wrapper .second .written .line {
+  width: 19rem;
+  height: 0.1rem;
+  background: white;
+}
+.wrapper .final {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
+}
+.wrapper .final .topic {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5rem;
+}
+.wrapper .final .topic img {
+  height: 8rem;
+}
+.wrapper .final .topic h1 {
+  color: hsl(34deg, 5%, 72%);
+}
+.wrapper .final .topic h1:hover {
+  color: hsl(5deg, 85%, 63%);
+}
+.wrapper .final .topic p {
+  color: hsl(34deg, 5%, 72%);
+}
+.wrapper .final .topic p:hover {
+  color: hsl(5deg, 85%, 63%);
+}
+.wrapper .final .topic .write {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  line-height: 1.5rem;
+}
+
+@media only screen and (max-width: 1440px) {
+  .wrapper .second .written {
+    padding: 1rem;
+    width: 95%;
+  }
+  .wrapper .second .written .line {
+    width: 18rem;
+  }
+}
+.wrapper .second .desktop .img-container img {
+  height: 100%;
+}
+
+.wrapper .second .desktop .dive {
+  width: 20rem;
+}
+
+.wrapper .second .desktop .dive .read {
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .wrapper .heading {
+    grid-template-columns: none;
+  }
+  .wrapper .second .desktop {
+    display: block;
+    grid-column: span 1;
+  }
+  .wrapper .final .topic {
+    grid-template-columns: none;
+  }
+}
+.show {
+  display: block;
+}
+
+@media only screen and (max-width: 375px) {
+  body {
+    margin: 1rem 2rem;
+  }
+  .wrapper .second {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .wrapper .second .written {
+    height: 93%;
+  }
+  .wrapper .second .written .trick {
+    padding: 1rem;
+  }
+  .wrapper .second .desktop {
+    height: 35rem;
+  }
+  .wrapper .second .desktop .bright {
+    font-size: 1.2rem;
+    margin-left: 0;
+    width: 15rem;
+  }
+  .wrapper .heading {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .wrapper .heading .film {
+    display: inline-block;
+    justify-self: end;
+  }
+  .wrapper .heading ul {
+    grid-template-columns: none;
+    display: none;
+  }
+  .wrapper .final {
+    gap: 1rem;
+  }
+  .wrapper .final .topic {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+    align-items: center;
+  }
+}/*# sourceMappingURL=style.css.map */
